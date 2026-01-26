@@ -19,6 +19,11 @@ for animal_data in animals_data:
         continue
     output += "\n"
 
+with open("animals_template.html", "r") as file:
+    html_inhalt = file.read()
 
+animals_html = html_inhalt.replace("__REPLACE_ANIMALS_INFO__", output)
 
+with open("animals.html", "w") as file:
+    file.write(animals_html)
 
