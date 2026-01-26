@@ -14,15 +14,18 @@ def serialize_animal(animal_obj):
 
     output = f'<li class="cards__item">\n'
     output += f'  <div class="card__title">{name}</div>\n'
-    output += f'  <p class="card__text">\n'
-    output += f'    <strong>Diet:</strong> {diet}<br/>\n'
-    output += f'    <strong>Location:</strong> {location}<br/>\n'
+    output += f'  <br/>\n'
+    output += f'  <div class="card__text">\n'
+    output += f'    <ul>\n'
+    output += f'      <li><strong>Diet:</strong> {diet}</li>\n'
+    output += f'      <li><strong>Location:</strong> {location}</li>\n'
 
     if animal_type:
-        output += f'    <strong>Type:</strong> {animal_type}<br/>\n'
+        output += f'      <li><strong>Type:</strong> {animal_type}</li>\n'
 
-    output += '  </p>\n'
-    output += '</li>'
+    output += f'    </ul>\n'
+    output += f'  </div>\n'
+    output += f'</li>'
 
     return output
 
