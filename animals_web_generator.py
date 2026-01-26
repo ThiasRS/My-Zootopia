@@ -9,19 +9,17 @@ animals_data = load_data('animals_data.json')
 
 output = ""
 for animal_data in animals_data:
-    output += '<li class="cards_item">'
-    output += f'<div class="card__title">{animal_data["name"]}</div><br/>\n'
-    output += f'<p class="card_text">'
+    output += '<li class="cards__item">'
+    output += f'<div class="card__title">{animal_data["name"]}</div>\n'
+    output += f'<p class="card__text">'
     output += f'<strong>Diet:</strong> {animal_data["characteristics"]["diet"]}<br/>\n'
     output += f'<strong>Location:</strong> {animal_data["locations"][0]}<br/>\n'
     try:
         output += f'<strong>Type:</strong> {animal_data["characteristics"]["type"]}<br/>\n'
     except:
-        output += "<br/>\n"
         output += '</p>'
         output += '</li>'
         continue
-    output += "<br/>\n"
     output += '</p>'
     output += '</li>'
 
