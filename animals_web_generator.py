@@ -1,15 +1,4 @@
-import requests
-
-API_KEY = 'pPjwC3Sg9pkXPuSlj562gqEAILOtkOZJ6OT2wqAu'
-
-
-def load_api_data(animal_name):
-  """ Loads a JSON data from api """
-  url = f'https://api.api-ninjas.com/v1/animals?name={animal_name}'
-  headers = {'X-Api-Key': API_KEY}
-  response = requests.get(url, headers=headers)
-  data = response.json()
-  return data
+import data_fetcher
 
 
 def serialize_animal(animal_obj):
@@ -53,7 +42,7 @@ def main():
     """Takes the data and creates the animals.html"""
     animal_name = user_picks_animal()
 
-    animals_data = load_api_data(animal_name)
+    animals_data = data_fetcher.fetch_data(animal_name)
 
 
     output = ""
