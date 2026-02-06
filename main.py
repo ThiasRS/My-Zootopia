@@ -17,7 +17,7 @@ def main():
         for animal_data in animals_data:
             output += animals_web_generator.serialize_animal(animal_data)
 
-    with open("animals_template.html", "r", encoding="utf-8") as file:
+    with open("templates/animals_template.html", "r", encoding="utf-8") as file:
         html_inhalt = file.read()
 
     animals_html = (
