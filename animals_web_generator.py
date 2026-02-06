@@ -35,9 +35,25 @@ def serialize_animal(animal_obj):
 
     return output
 
+
+def user_picks_animal():
+    """User input to choose animal name"""
+    while True:
+        animal_name = str(input('Type in an animal name to create a website: '))
+        if animal_name == "":
+            print('Empty input, type in an animal name!')
+        else:
+            break
+    return animal_name
+
+
+
+
 def main():
     """Takes the data and creates the animals.html"""
-    animals_data = load_api_data('Fox')
+    animal_name = user_picks_animal()
+
+    animals_data = load_api_data(animal_name)
 
     output = ""
     for animal_data in animals_data:
