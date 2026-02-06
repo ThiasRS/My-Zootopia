@@ -1,5 +1,5 @@
-import animals_web_generator
-import data_fetcher
+from source import data_fetcher, animals_web_generator
+
 
 def main():
     """Takes the data and creates the animals.html"""
