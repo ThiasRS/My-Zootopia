@@ -55,9 +55,13 @@ def main():
 
     animals_data = load_api_data(animal_name)
 
+
     output = ""
-    for animal_data in animals_data:
-        output += serialize_animal(animal_data)
+    if not animals_data:
+        output = f'<h2 style="text-align: center;">The animal {animal_name} does not exist.</h2>'
+    else:
+        for animal_data in animals_data:
+            output += serialize_animal(animal_data)
 
     with open("animals_template.html", "r", encoding="utf-8") as file:
         html_inhalt = file.read()
