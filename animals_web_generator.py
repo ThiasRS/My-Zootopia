@@ -67,6 +67,8 @@ def main():
     with open("animals.html", "w", encoding="utf-8") as file:
         file.write(animals_html)
 
+    print("Website was successfully generated to the file animals.html")
+
 
 if __name__ == "__main__":
     main()
