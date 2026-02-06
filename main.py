@@ -5,6 +5,8 @@ def main():
     """Takes the data and creates the animals.html"""
     animal_name = animals_web_generator.user_picks_animal()
 
+    animal_name_output = f"For the animal: {animal_name}"
+
     animals_data = data_fetcher.fetch_data(animal_name)
 
 
@@ -18,7 +20,11 @@ def main():
     with open("animals_template.html", "r", encoding="utf-8") as file:
         html_inhalt = file.read()
 
-    animals_html = html_inhalt.replace("__REPLACE_ANIMALS_INFO__", output)
+    animals_html = (
+        html_inhalt
+        .replace("__REPLACE_ANIMALS_INFO__", output)
+        .replace("__REPLACE_ANIMALS_NAME__", animal_name_output)
+    )
 
     with open("animals.html", "w", encoding="utf-8") as file:
         file.write(animals_html)
