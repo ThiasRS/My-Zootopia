@@ -2,6 +2,7 @@ import data_fetcher
 
 
 def serialize_animal(animal_obj):
+    """Converts a single animal dictionary into an HTML list item string."""
     name = animal_obj.get("name", "Unknown Animal")
     diet = animal_obj["characteristics"].get("diet", "Unknown")
     location = animal_obj["locations"][0] if animal_obj.get("locations") else "Unknown"
